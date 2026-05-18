@@ -2,70 +2,276 @@
 <html lang="uk" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Лабораторна 2 - 4 - Резюме</title>
+    <title>Лабораторна 5 - Резюме</title>
+
     <style>
-        body.dark-theme {
-            background-color: #1a1a1a;
-            color: #ffffff;
+        * {
+            box-sizing: border-box;
         }
 
-        
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+            color: #1f2937;
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.dark-theme {
+            background: linear-gradient(135deg, #111827, #1f2937);
+            color: #f9fafb;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            transition: background 0.3s;
+        }
+
+        body.dark-theme .container {
+            background: #111827;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+        }
+
+        .top-panel {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        #theme-toggle {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 25px;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #theme-toggle:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        .profile-header {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        body.dark-theme .profile-header {
+            border-bottom-color: #374151;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #38bdf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin: 10px 0 5px;
+            color: #2563eb;
+            font-size: 32px;
+        }
+
+        body.dark-theme h1 {
+            color: #60a5fa;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #6b7280;
+        }
+
+        body.dark-theme .subtitle {
+            color: #d1d5db;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #1d4ed8;
+            border-left: 5px solid #2563eb;
+            padding-left: 12px;
+        }
+
+        body.dark-theme h2 {
+            color: #93c5fd;
+            border-left-color: #60a5fa;
+        }
+
+        a {
+            color: #2563eb;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            background: #f1f5f9;
+            margin: 10px 0;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border-left: 4px solid #2563eb;
+        }
+
+        body.dark-theme li {
+            background: #1f2937;
+            border-left-color: #60a5fa;
+        }
+
+        #comments-section p {
+            background: #eff6ff;
+            padding: 14px;
+            border-radius: 10px;
+            border-left: 4px solid #38bdf8;
+        }
+
+        body.dark-theme #comments-section p {
+            background: #1e293b;
+        }
+
         #feedback-modal {
             display: none;
-            background: #f4f4f4;
-            padding: 20px;
+            background: #ffffff;
+            padding: 25px;
             position: fixed;
             top: 20%;
-            left: 30%;
-            color: black;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 360px;
+            color: #1f2937;
+            border-radius: 16px;
+            border: 1px solid #d1d5db;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+            z-index: 10;
+        }
+
+        #feedback-modal h3 {
+            margin-top: 0;
+            color: #2563eb;
+            text-align: center;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        form button {
+            width: 100%;
+            padding: 11px;
+            border: none;
+            border-radius: 8px;
+            background: #16a34a;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #15803d;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid #cbd5e1;
+            color: #6b7280;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        body.dark-theme footer {
+            border-top-color: #374151;
+            color: #d1d5db;
         }
     </style>
 </head>
+
 <body>
-    <button id="theme-toggle">Перемкнути тему</button>
+    <div class="container">
+        <div class="top-panel">
+            <button id="theme-toggle">Перемкнути тему</button>
+        </div>
 
-    <h1>Батура Даніїл Павлович</h1>
-    <p><strong><u>Студент</u></strong></p>
+        <div class="profile-header">
+            <div class="avatar">БД</div>
+            <h1>Батура Даніїл Павлович</h1>
+            <p class="subtitle"><strong><u>Студент спеціальності “Кібербезпека”</u></strong></p>
+        </div>
 
-    <h2>Освіта</h2>
-    <p>
-        <a href="https://lpnu.ua/">Національний університет "Львівська політехніка"</a>.
-    </p>
-    <p>Спеціальність: <b>Кібербезпека</b></p>
+        <h2>Освіта</h2>
+        <p>
+            <a href="https://lpnu.ua/" target="_blank">
+                Національний університет "Львівська політехніка"
+            </a>
+        </p>
+        <p>Спеціальність: <b>Кібербезпека</b></p>
 
-    <h2>Досвід та навички</h2>
-    <ul>
-        <li><font color="red">Знання базових команд ОС Linux;</font></li>
-        <li><font color="#1234FF">Основи програмування C#;</font></li>
-        <li>Основи програмування (Python);</li>
-        <li>Базове розуміння принципів кібербезпеки.</li>
-    </ul>
+        <h2>Досвід та навички</h2>
+        <ul>
+            <li>Знання базових команд операційної системи Linux</li>
+            <li>Основи програмування мовою C#</li>
+            <li>Основи програмування мовою Python</li>
+            <li>Базове розуміння принципів кібербезпеки</li>
+        </ul>
 
-    <h2>Інтереси та захоплення</h2>
-    <ul>
-        <li>Кібербезпека;</li>
-        <li>Громадська діяльність;</li>
-        <li>Медицина.</li>
-    </ul>
+        <h2>Інтереси та захоплення</h2>
+        <ul>
+            <li>Кібербезпека та захист інформації</li>
+            <li>Громадська діяльність</li>
+            <li>Медицина та сучасні технології</li>
+        </ul>
 
-    <h2>Коментарі роботодавців:</h2>
-    <div id="comments-section"></div>
+        <h2>Коментарі роботодавців</h2>
+        <div id="comments-section"></div>
 
-    <div id="feedback-modal">
-        <h3>Зворотній зв'язок</h3>
-        <form action="https://formspree.io/f/mbdpwznp" method="POST">
-            <input type="text" name="ім'я" placeholder="Ваше ім'я" required><br><br>
-            <input type="email" name="email" placeholder="Email" required><br><br>
-            <input type="tel" name="телефон" placeholder="Номер телефону"><br><br>
-            <textarea name="повідомлення" placeholder="Ваше повідомлення"></textarea><br><br>
-            <button type="submit">Відправити</button>
-        </form>
+        <div id="feedback-modal">
+            <h3>Зворотній зв'язок</h3>
+            <form action="https://formspree.io/f/mbdpwznp" method="POST">
+                <input type="text" name="ім'я" placeholder="Ваше ім'я" required><br><br>
+                <input type="email" name="email" placeholder="Email" required><br><br>
+                <input type="tel" name="телефон" placeholder="Номер телефону"><br><br>
+                <textarea name="повідомлення" placeholder="Ваше повідомлення"></textarea><br><br>
+                <button type="submit">Відправити</button>
+            </form>
+        </div>
+
+        <footer id="os-footer"></footer>
     </div>
-
-    <footer id="os-footer" style="margin-top: 40px; padding-top: 10px; border-top: 1px solid gray;">
-    </footer>
 
     <script src="script.js"></script>
 </body>
