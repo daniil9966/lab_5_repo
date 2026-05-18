@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="uk" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Лабораторна 2 - 4 - Резюме</title>
+    <style>
+        body.dark-theme {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        
+        #feedback-modal {
+            display: none;
+            background: #f4f4f4;
+            padding: 20px;
+            position: fixed;
+            top: 20%;
+            left: 30%;
+            color: black;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle">Перемкнути тему</button>
+
+    <h1>Батура Даніїл Павлович</h1>
+    <p><strong><u>Студент</u></strong></p>
+
+    <h2>Освіта</h2>
+    <p>
+        <a href="https://lpnu.ua/">Національний університет "Львівська політехніка"</a>.
+    </p>
+    <p>Спеціальність: <b>Кібербезпека</b></p>
+
+    <h2>Досвід та навички</h2>
+    <ul>
+        <li><font color="red">Знання базових команд ОС Linux;</font></li>
+        <li><font color="#1234FF">Основи програмування C#;</font></li>
+        <li>Основи програмування (Python);</li>
+        <li>Базове розуміння принципів кібербезпеки.</li>
+    </ul>
+
+    <h2>Інтереси та захоплення</h2>
+    <ul>
+        <li>Кібербезпека;</li>
+        <li>Громадська діяльність;</li>
+        <li>Медицина.</li>
+    </ul>
+
+    <h2>Коментарі роботодавців:</h2>
+    <div id="comments-section"></div>
+
+    <div id="feedback-modal">
+        <h3>Зворотній зв'язок</h3>
+        <form action="https://formspree.io/f/mbdpwznp" method="POST">
+            <input type="text" name="ім'я" placeholder="Ваше ім'я" required><br><br>
+            <input type="email" name="email" placeholder="Email" required><br><br>
+            <input type="tel" name="телефон" placeholder="Номер телефону"><br><br>
+            <textarea name="повідомлення" placeholder="Ваше повідомлення"></textarea><br><br>
+            <button type="submit">Відправити</button>
+        </form>
+    </div>
+
+    <footer id="os-footer" style="margin-top: 40px; padding-top: 10px; border-top: 1px solid gray;">
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
